@@ -18,12 +18,12 @@
 <div class="d-flex flex-column bg-light min-vh-100">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand mx-auto" href="/">📨 Мини-почта 📨</a>
+            <a class="navbar-brand mx-auto" href="/client-templates">📨 Мини-почта 📨</a>
         </div>
     </nav>
 
     <main class="container flex-fill my-3">
-        <form action="#" method="post" th:action="@{/}" th:object="${message}" class="card border-secondary mb-3"
+        <form action="#" method="post" th:action="@{/templates}" th:object="${message}" class="card border-secondary mb-3"
               data-test="send-form">
             <fieldset>
                 <legend class="card-header h5 border-secondary bg-dark text-light">📩 Отправить письмо</legend>
@@ -33,9 +33,6 @@
                             Текст ошибки
                         </div>
                     </div>
-                    <!--<div th:if="${isLoading}" class="mb-3" data-test="send-alert">
-                          <div class="alert alert-warning">Загрузка...</div>
-                      </div>-->
                     <div th:if="${isSent}" class="mb-3" data-test="send-alert">
                         <div class="alert alert-success">Сообщение отправлено</div>
                     </div>
@@ -66,13 +63,13 @@
                         <header class="card-title d-flex">
                             <div th:text="${message.author}" class="text-muted" data-test="message-author">Имя Автора
                             </div>
-                            <a th:href="@{/messages/{message_id}(message_id=${message.id})}" class="card-link ms-auto"
+                            <a th:href="@{/templates/messages/{message_id}(message_id=${message.id})}" class="card-link ms-auto"
                                data-test="message-open">Открыть ↗️</a>
                         </header>
                         <div th:text="${message.text}" class="card-text" data-test="message-text">
                         </div>
                         <div class="d-flex">
-                            <form method="post" th:action="'/clap/' + ${message.id}" class="ms-auto"
+                            <form method="post" th:action="'/templates/clap/' + ${message.id}" class="ms-auto"
                                   data-test="message-clap-form">
                                 <button class="btn">👏🏻 <span th:text="${message.clap}" data-test="clap-count">0</span>
                                 </button>

@@ -1,6 +1,7 @@
-package com.weblabs.lab3server.repo
+package com.weblabs.lab3server.module.service
 
 import com.weblabs.lab3server.model.Message
+import com.weblabs.lab3server.module.repo.MessageRepository
 import org.springframework.stereotype.Service
 
 @Service

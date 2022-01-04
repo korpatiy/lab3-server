@@ -1,7 +1,7 @@
-package com.weblabs.lab3server.controller
+package com.weblabs.lab3server.rest.controller
 
 import com.weblabs.lab3server.model.Message
-import com.weblabs.lab3server.repo.MessageService
+import com.weblabs.lab3server.module.service.MessageService
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.validation.BindingResult
@@ -11,7 +11,7 @@ import org.springframework.web.servlet.view.RedirectView
 import javax.validation.Valid
 
 @Controller
-@RequestMapping
+@RequestMapping("/templates")
 class MessageController(
     private val messageService: MessageService
 ) {
@@ -29,7 +29,7 @@ class MessageController(
         bindingResult: BindingResult,
         model: Model
     ): RedirectView {
-        val redirectView = RedirectView("/", true)
+        val redirectView = RedirectView("/templates", true)
         if (!bindingResult.hasErrors()) {
             messageService.save(message)
             redirectAttributes.addFlashAttribute("isSent", true)
@@ -51,6 +51,6 @@ class MessageController(
     @PostMapping("/clap/{message_id}")
     fun clapMessage(@PathVariable message_id: Long): String {
         messageService.clapMessage(message_id)
-        return "redirect:/"
+        return "redirect:/templates"
     }
 }

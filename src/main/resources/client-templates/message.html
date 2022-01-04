@@ -18,7 +18,7 @@
 <div class="d-flex flex-column bg-light min-vh-100">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand mx-auto" href="/">📨 Мини-почта 📨</a>
+            <a class="navbar-brand mx-auto" href="/client-templates">📨 Мини-почта 📨</a>
         </div>
     </nav>
 
@@ -31,7 +31,7 @@
                 <div th:text="${message.text}" class="card-text" data-test="message-text">
                 </div>
                 <div class="d-flex">
-                    <form method="post" th:action="'/clap/' + ${message.id}" class="ms-auto"
+                    <form method="post" th:action="'/templates/clap/' + ${message.id}" class="ms-auto"
                           data-test="message-clap-form">
                         <button class="btn">👏🏻 <span th:text="${message.clap}" data-test="clap-count">0</span>
                         </button>

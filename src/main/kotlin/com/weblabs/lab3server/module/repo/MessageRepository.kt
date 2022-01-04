@@ -1,4 +1,4 @@
-package com.weblabs.lab3server.repo
+package com.weblabs.lab3server.module.repo
 
 import com.weblabs.lab3server.model.Message
 import org.springframework.data.jpa.repository.JpaRepository
