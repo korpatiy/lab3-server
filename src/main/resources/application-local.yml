@@ -5,4 +5,5 @@ spring:
     driver-class-name: org.postgresql.Driver
     username: postgres
     password: postgres
-    url: jdbc:postgresql://db:5432/mini-mail
+    url: jdbc:postgresql://localhost:5430/mini-mail
+

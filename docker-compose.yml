@@ -9,3 +9,10 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=mini-mail
+  app:
+    build:
+       dockerfile: Dockerfile
+    ports:
+    - '8080:8080'
+    depends_on:
+      - db
