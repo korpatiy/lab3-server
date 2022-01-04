@@ -25,7 +25,7 @@ class MessageController(
 
     @GetMapping
     @Operation(description = "Возвращает список всех сообщений, отсортированных по убыванию по количеству хлопков")
-    fun getMessages() = ResponseEntity.ok().body(messageService.getAll())
+    fun getMessages() = ResponseEntity.ok().body(messageService.getAll().sortedByDescending { it.clap })
 
     @GetMapping("/{message_id}")
     @Operation(description = "Возвращает сообщение по ID")
