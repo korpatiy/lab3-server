@@ -6,6 +6,6 @@ spring:
     username: postgres
     password: postgres
     url: jdbc:postgresql://db:5432/mini-mail
-  thymeleaf:
-    prefix: classpath:/client-templates/
-
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher

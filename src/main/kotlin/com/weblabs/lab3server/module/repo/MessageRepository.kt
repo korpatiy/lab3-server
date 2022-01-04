@@ -8,10 +8,4 @@ import org.springframework.stereotype.Repository
 import org.springframework.transaction.annotation.Transactional
 
 @Repository
-interface MessageRepository : JpaRepository<Message, Long> {
-
-    @Transactional
-    @Modifying
-    @Query("update Message set clap = clap + 1 where id=:id")
-    fun clapMessage(id: Long)
-}
+interface MessageRepository : JpaRepository<Message, Long>

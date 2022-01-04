@@ -1,7 +1,4 @@
 #### Предварительно собрать проект
-Необходимо выполнять каждый раз после перехода на другую ветку!
-(Собрать jar'ник для dockerfile)
-
 ```
 gradlew assemble
 ```
@@ -17,4 +14,10 @@ docker-compose up --build -d
 ```
 docker-compose down
 ```
+
+#### Endpoints
+
+- http://localhost:8080/templates - lab3
+- http://localhost:8080/swagger-ui.html - API (lab 5)
+
 
