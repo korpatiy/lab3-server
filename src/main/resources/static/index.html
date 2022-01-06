@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8"/>
     <meta
@@ -25,13 +25,7 @@
                 <legend class="card-header h5 border-secondary bg-dark text-light">📩 Отправить письмо</legend>
                 <div class="card-body">
                     <div class="mb-3" data-test="send-alert">
-                        <div class="alert alert-danger">Текст ошибки</div>
-                    </div>
-                    <div class="mb-3" data-test="send-alert">
-                      <div class="alert alert-warning">Загрузка...</div>
-                    </div>
-                    <div class="mb-3" data-test="send-alert">
-                      <div class="alert alert-success">Сообщение отправлено</div>
+                      <div class="alert d-none">Сообщение отправлено</div>
                     </div>
                     <div class="mb-3">
                         <label for="sender" class="form-label">От кого:</label>
@@ -50,7 +44,9 @@
             </fieldset>
         </form>
 
-        <ul id="message-list" class="list-unstyled">
+        <ul id="message-list" class="list-unstyled"></ul>
+
+        <template id="message-template" class="list-unstyled">
             <li class="mb-3">
                 <article class="card" data-test="message">
                     <div class="card-body">
@@ -59,9 +55,11 @@
                             <a href="message.html" class="card-link ms-auto" data-test="message-open">Открыть ↗️</a>
                         </header>
                         <div class="card-text" data-test="message-text">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi eveniet ex excepturi id
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi eveniet ex excepturi
+                            id
                             inventore
-                            neque ratione, rerum sapiente tempora. Architecto, debitis distinctio facere modi molestias
+                            neque ratione, rerum sapiente tempora. Architecto, debitis distinctio facere modi
+                            molestias
                             mollitia
                             quasi quidem sed voluptates.
                         </div>
@@ -73,7 +71,7 @@
                     </div>
                 </article>
             </li>
-        </ul>
+        </template>
     </main>
 
     <footer class="bg-dark text-light py-3">
