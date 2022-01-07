@@ -1,0 +1,9 @@
+spring:
+  liquibase:
+    change-log: classpath:db/changelog/table.xml
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: postgres
+    url: jdbc:postgresql://localhost:5430/mini-mail
+
