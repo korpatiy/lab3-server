@@ -19,5 +19,5 @@ docker-compose down
 
 - http://localhost:8080/templates - lab3
 - http://localhost:8080/swagger-ui.html - API (lab 5)
-
+- http://localhost:8080 - ajax
 
