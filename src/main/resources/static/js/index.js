@@ -133,7 +133,11 @@ async function handlePostMessageSubmit(event) {
             elements.alert.innerText = 'Произошла ошибка во время отправки запроса'
         }
     ).finally(
-        () => sendButton.disabled = false
+        () => {
+            sendButton.disabled = false
+            elements.inputs.textInput.value = ''
+            elements.inputs.authorInput.value = ''
+        }
     )
 }
 
